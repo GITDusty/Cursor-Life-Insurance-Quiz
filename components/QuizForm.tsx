@@ -142,7 +142,7 @@ export default function QuizForm() {
     }
   };
 
-  const updateField = (field: keyof QuizData, value: any) => {
+  const updateField = (field: string, value: any) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     // Clear error for this field
     if (errors[field]) {
