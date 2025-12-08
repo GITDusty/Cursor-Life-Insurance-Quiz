@@ -142,7 +142,7 @@ export default function QuizForm() {
     }
   };
 
-  const updateField = (field: string, value: any) => {
+  const updateField = (field: keyof QuizData, value: any) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     // Clear error for this field
     if (errors[field]) {
@@ -280,7 +280,7 @@ export default function QuizForm() {
                   value={formData.height || ""}
                   onChange={(e) => updateField("height", parseInt(e.target.value) || null)}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="e.g., 70 (5'10\")"
+                  placeholder="e.g., 70 (5'10&quot;)"
                 />
                 {errors.height && <p className="text-red-500 text-sm mt-1">{errors.height}</p>}
               </div>
